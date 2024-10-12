@@ -1,0 +1,104 @@
+# Built by Hamza Ahmad - ETS Montreal
+# ConflictWatch - Global Conflict Intelligence Dashboard
+# Docker Compose: api, dashboard, redis, scheduler
+
+version: "3.9"
+
+x-common-env: &common-env
+  REDIS_URL: redis://redis:6379/0
+  DATABASE_URL: sqlite+aiosqlite:////data/conflictwatch.db
+  LOG_LEVEL: INFO
+  PYTHONUNBUFFERED: "1"
+
+services:
+
+  redis:
+    image: redis:7.2-alpine
+    container_name: conflictwatch-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --save 60 1 --loglevel warning
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: api
+    container_name: conflictwatch-api
+    ports:
+      - "8000:8000"
+    environment:
+      <<: *common-env
+      SERVICE: api
+    volumes:
+      - app_data:/data
+      - ./app:/app/app
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 2 --loop asyncio
+
+  scheduler:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: scheduler
+    container_name: conflictwatch-scheduler
+    environment:
+      <<: *common-env
+      SERVICE: scheduler
+    volumes:
+      - app_data:/data
+      - ./app:/app/app
+    depends_on:
+      redis:
+        condition: service_healthy
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+    command: python -m app.services.scheduler
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dashboard
+    container_name: conflictwatch-dashboard
+    ports:
+      - "8501:8501"
+    environment:
+      <<: *common-env
+      API_BASE_URL: http://api:8000
+      SERVICE: dashboard
+    volumes:
+      - ./dashboard:/app/dashboard
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+    command: >
+      streamlit run dashboard/app.py
+      --server.port 8501
+      --server.address 0.0.0.0
+      --server.headless true
+      --server.enableCORS false
+      --server.enableXsrfProtection false
+      --theme.base dark
+
+volumes:
+  redis_data:
+  app_data:
