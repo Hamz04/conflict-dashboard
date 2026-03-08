@@ -1,4 +1,4 @@
-# Built by Hamza Ahmad - ETS Montreal
+# Built by Hamzy - ETS Montreal
 # ConflictWatch - Global Conflict Intelligence Dashboard
 # Pydantic v2 data models for all conflict events and intelligence objects
 

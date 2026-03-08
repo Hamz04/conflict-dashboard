@@ -1,4 +1,4 @@
-# Built by Hamza Ahmad - ETS Montreal
+# Built by Hamzy - ETS Montreal
 # ConflictWatch - Global Conflict Intelligence Dashboard
 # GDELT Project data ingestion service: 15-min CSV updates + DOC API queries
 

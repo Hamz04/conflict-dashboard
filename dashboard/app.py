@@ -1,4 +1,4 @@
-# Built by Hamza Ahmad - ETS Montreal
+# Built by Hamzy - ETS Montreal
 # ConflictWatch - Global Conflict Intelligence Dashboard
 # Full Streamlit dashboard: dark military-intel theme, 5 pages, 3D globe, live feed
 
@@ -951,7 +951,7 @@ def render_sidebar() -> tuple:
                     ⚡ CONFLICTWATCH
                 </div>
                 <div style="color:#888;font-size:0.7rem">Global Conflict Intelligence</div>
-                <div style="color:#666;font-size:0.65rem">Built by Hamza Ahmad | ETS Montreal</div>
+                <div style="color:#666;font-size:0.65rem">Built by Hamzy | ETS Montreal</div>
             </div>
             """,
             unsafe_allow_html=True,
@@ -1063,7 +1063,7 @@ def main():
     st.markdown(
         """
         <div style="text-align:center;color:#333;font-size:0.65rem;padding:20px 0;border-top:1px solid #1a1a4e;margin-top:30px">
-            ConflictWatch v1.0 | Built by Hamza Ahmad | ETS Montreal |
+            ConflictWatch v1.0 | Built by Hamzy | ETS Montreal |
             Data sourced from GDELT Project and public news RSS feeds |
             For informational/research purposes only
         </div>

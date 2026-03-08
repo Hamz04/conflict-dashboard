@@ -1,4 +1,4 @@
-# Built by Hamza Ahmad - ETS Montreal
+# Built by Hamzy - ETS Montreal
 # ConflictWatch - Global Conflict Intelligence Dashboard
 # SQLAlchemy SQLite async database layer with ORM models and deduplication
 

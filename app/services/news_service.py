@@ -1,4 +1,4 @@
-# Built by Hamza Ahmad - ETS Montreal
+# Built by Hamzy - ETS Montreal
 # ConflictWatch - Global Conflict Intelligence Dashboard
 # Multi-source RSS news ingestion service with conflict keyword filtering
 
@@ -157,7 +157,7 @@ class NewsService:
                 headers={
                     "User-Agent": (
                         "Mozilla/5.0 (compatible; ConflictWatch/1.0; "
-                        "+https://github.com/HamzaAhmad)"
+                        "+https://github.com/Hamz04)"
                     )
                 },
             )

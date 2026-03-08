@@ -1,4 +1,4 @@
-# Built by Hamza Ahmad - ETS Montreal
+# Built by Hamzy - ETS Montreal
 
 # ⚡ ConflictWatch — Global Conflict Intelligence Dashboard
 
@@ -7,9 +7,9 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.32-FF4B4B?style=flat-square&logo=streamlit)](https://streamlit.io)
 [![GDELT](https://img.shields.io/badge/Data-GDELT_Project-orange?style=flat-square)](https://gdeltproject.org)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
-[![Author](https://img.shields.io/badge/Author-Hamza_Ahmad_ETS_Montreal-red?style=flat-square)](https://github.com/HamzaAhmad)
+[![Author](https://img.shields.io/badge/Author-Hamzy_ETS_Montreal-red?style=flat-square)](https://github.com/Hamz04)
 
-**Author:** Hamza Ahmad | ETS Montreal | [github.com/HamzaAhmad](https://github.com/HamzaAhmad)
+**Author:** Hamzy | ETS Montreal | [github.com/Hamz04](https://github.com/Hamz04)
 
 ---
 
@@ -162,7 +162,7 @@ Trend = current_24h_score - previous_24h_score
 
 ```bash
 # Clone the repository
-git clone https://github.com/HamzaAhmad/conflictwatch
+git clone https://github.com/Hamz04/conflict-dashboard.git
 cd conflictwatch
 
 # Start all services
@@ -298,7 +298,7 @@ conflict-dashboard/
 >
 > **ConflictWatch is intended for informational, research, and educational purposes only.** It does not advocate for any political position, government, or armed group. All event data is derived from publicly available open sources and does not represent intelligence assessments by any government or official body.
 >
-> Users are responsible for how they interpret and act on information provided by this tool. The author (Hamza Ahmad, ETS Montreal) assumes no liability for decisions made based on this dashboard.
+> Users are responsible for how they interpret and act on information provided by this tool. The author (Hamzy, ETS Montreal) assumes no liability for decisions made based on this dashboard.
 
 ---
 
@@ -320,4 +320,4 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
-*ConflictWatch — Open-source OSINT intelligence. Built by Hamza Ahmad | ETS Montreal*
+*ConflictWatch — Open-source OSINT intelligence. Built by Hamzy | ETS Montreal*

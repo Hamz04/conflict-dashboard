@@ -1,4 +1,4 @@
-# Built by Hamza Ahmad - ETS Montreal
+# Built by Hamzy - ETS Montreal
 # ConflictWatch - Global Conflict Intelligence Dashboard
 # FastAPI application: REST API + WebSocket streaming
 
@@ -112,7 +112,7 @@ app = FastAPI(
     title="ConflictWatch API",
     description=(
         "Real-time Global Conflict Intelligence API. "
-        "Built by Hamza Ahmad | ETS Montreal. "
+        "Built by Hamzy | ETS Montreal. "
         "Data sources: GDELT Project, Reuters, BBC, Al Jazeera, AP News, Iran International."
     ),
     version="1.0.0",
@@ -134,7 +134,7 @@ app.add_middleware(
 @app.middleware("http")
 async def add_custom_headers(request, call_next):
     response = await call_next(request)
-    response.headers["X-Built-By"] = "Hamza Ahmad - ETS Montreal"
+    response.headers["X-Built-By"] = "Hamzy - ETS Montreal"
     response.headers["X-App"] = "ConflictWatch v1.0"
     return response
 
@@ -591,7 +591,7 @@ async def websocket_events(websocket: WebSocket):
 async def root():
     return {
         "app": "ConflictWatch - Global Conflict Intelligence Dashboard",
-        "author": "Hamza Ahmad | ETS Montreal",
+        "author": "Hamzy | ETS Montreal",
         "version": "1.0.0",
         "docs": "/docs",
         "endpoints": {

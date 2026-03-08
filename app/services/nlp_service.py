@@ -1,4 +1,4 @@
-# Built by Hamza Ahmad - ETS Montreal
+# Built by Hamzy - ETS Montreal
 # ConflictWatch - Global Conflict Intelligence Dashboard
 # NLP pipeline: event classification, severity assessment, entity extraction,
 # sentiment scoring, escalation scoring, and Global Threat Index computation
